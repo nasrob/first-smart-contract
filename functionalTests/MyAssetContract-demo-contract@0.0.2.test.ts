@@ -62,13 +62,13 @@ describe('MyAssetContract-demo-contract@0.0.2' , () => {
     describe('myAssetExists', () => {
         it('should submit myAssetExists transaction', async () => {
             // TODO: populate transaction parameters
-            const myAssetId: string = 'EXAMPLE';
+            const myAssetId: string = '003';
             const args: string[] = [ myAssetId];
 
             const response: Buffer = await SmartContractUtil.submitTransaction('MyAssetContract', 'myAssetExists', args, gateway);
             // submitTransaction returns buffer of transcation return value
             // TODO: Update with return value of transaction
-            assert.equal(true, true);
+            assert.equal(JSON.parse(response.toString()), true);
             // assert.equal(JSON.parse(response.toString()), undefined);
         }).timeout(10000);
     });
